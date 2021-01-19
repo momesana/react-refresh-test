@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "MODE=development npx webpack serve --config webpack.js"
+    "test": "MODE=development npx webpack serve --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
