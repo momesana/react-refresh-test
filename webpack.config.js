@@ -1,5 +1,6 @@
 const path = require("path");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -10,7 +11,16 @@ module.exports = {
   // for webpack-dev-server 3.x according to issue
   // https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/235
   target: "web",
-  plugins: [new ReactRefreshWebpackPlugin()],
+  plugins: [new ReactRefreshWebpackPlugin(), new HtmlWebpackPlugin({
+    templateContent: `
+    <html>
+      <head><title>baem</title></head>
+      <body>
+        <div id="root"></div>
+      </body>
+    </html>
+    `
+  })],
   devServer: {
     // for webpack-dev-server 3.x
     hot: true,
